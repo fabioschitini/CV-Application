@@ -1,0 +1,188 @@
+class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      task: {
+        name: '',
+        email: '',
+        number: '',
+        scholl: '',
+        study: '',
+        dateStudy: '',
+        companyName: '',
+        positionTitle: '',
+        mainTask: '',
+        dateBegin: '',
+        dateEnd:'',
+        edit:false
+        },
+      CV: [],
+      
+    };
+    this.onDeletingTask = this.onDeletingTask.bind(this)
+    this.onEditingTask=this.onEditingTask.bind(this)
+  }
+  handleChange = (e) => {
+    switch (e.target.id) {
+      case 'nameInput':
+        this.setState({
+          task: {
+            name: e.target.value,
+      
+          }
+        });
+        break;
+       case 'emailInput':
+        this.setState({
+          task: {
+            email: e.target.value,
+      
+          }
+        });
+        break;
+       case 'numberInput':
+        this.setState({
+          task: {
+             number: e.target.value,
+      
+          }
+        });
+        break;
+       case 'schollInput':
+        this.setState({
+          task: {
+            scholl: e.target.value,
+      
+          }
+        });
+        break;
+       case 'studyInput':
+        this.setState({
+          task: {
+             study: e.target.value,
+      
+          }
+        });
+        break;
+       case 'dateStudyInput':
+        this.setState({
+          task: {
+            dateStudy: e.target.value,
+      
+          }
+        });
+        break;
+       case "companyNameInput":
+        this.setState({
+          task: {
+             companyName: e.target.value,
+      
+          }
+        });
+        break;
+      
+       
+       case "positionTitleInput" :
+        this.setState({
+          task: {
+            positionTitle: e.target.value,
+      
+          }
+        });
+        break;
+       case "mainTasksInput":
+        this.setState({
+          task: {
+           mainTask: e.target.value,
+      
+          }
+        });
+        break;
+       case "dateFromInput":
+        this.setState({
+          task: {
+             dateBegin: e.target.value,
+      
+          }
+        });
+        break;
+      case "dateUntilInput":
+        this.setState({
+          task: {
+             dateEnd: e.target.value,
+      
+          }
+        });
+        break;
+    }
+    
+ 
+    
+ 
+};
+
+onSubmitTask = (e) => {
+  e.preventDefault();
+  this.setState({
+    CV: this.state.CV.concat(this.state.task),
+    task: {
+      text: '',
+    },
+    
+  });
+  console.log(this.state.CV)
+};
+  onDeletingTask(e) {
+    
+    this.setState({
+       tasks: this.state.tasks.filter(task => task.id !== e.target.parentNode.id)
+    })
+  }
+  onEditingTask(e) {
+    
+  }
+  render() {
+    const { task, tasks} = this.state;
+
+    return (
+      <div>
+        <form onSubmit={this.onSubmitTask}>
+          <div id="generalInformation">
+          <label htmlFor="nameInput">Enter name</label>
+          <input onChange={this.handleChange} value={task.name} type="text" id="nameInput" />
+          <label htmlFor="emailInput">Enter email</label>
+          <input onChange={this.handleChange} value={task.email} type="text" id="emailInput" />
+          <label htmlFor="numberInput">Phone number</label>
+          <input onChange={this.handleChange} value={task.number} type="text" id="numberInput" />
+          </div>
+          <div id=" educationalExperience ">
+          <label htmlFor="schoolNameInput">Enter school name</label>
+          <input onChange={this.handleChange} value={task.scholl} type="text" id="schoolNameInput" />
+          <label htmlFor="titleOfStudyInput">Enter title of study</label>
+          <input onChange={this.handleChange} value={task.study} type="text" id="titleOfStudyInput" />
+          <label htmlFor="dateOfStudyInput">date of study</label>
+            <input onChange={this.handleChange} value={task.dateStudy} type="text" id="dateOfStudyInput" />
+          </div>
+          <div id=" practicalExperience">
+          <label htmlFor="companyNameInput">company name,</label>
+          <input onChange={this.handleChange} value={task.companyName} type="text" id="companyNameInput" />
+          <label htmlFor="positionTitleInput">position title</label>
+          <input onChange={this.handleChange} value={task.positionTitle} type="text" id="positionTitleInput" />
+          <label htmlFor="mainTasksInput">main tasks of your jobs</label>
+            <input onChange={this.handleChange} value={task.mainTask} type="text" id="mainTasksInput" />
+            <label htmlFor="dateFromInput"> date you worked from</label>
+            <input onChange={this.handleChange} value={task.dateBegin} type="text" id="dateFromInput" />
+            <label htmlFor="dateUntilInput">date until</label>
+            <input onChange={this.handleChange} value={task.dateEnd} type="text" id="dateUntilInput" />
+            
+            </div>
+          <button type="submit">
+            Submit
+          </button>
+        </form>
+        
+      </div>
+    );
+  }
+}

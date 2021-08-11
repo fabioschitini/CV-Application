@@ -1,91 +1,73 @@
-import './App.css';
+import { Component } from 'react';
+import Text from './components/CvText'
+import Input from './components/Input'
 
 class App extends Component {
   constructor() {
     super();
 
     this.state = {
-      task: {
-        text: '',
-        id: uniqid(),
-      edit:false},
+     
+      name: '',
+        email: '',
+          number: '',
+            scholl: '',
+              study: '',
+                dateStudy: '',
+                  companyName: '',
+                    positionTitle: '',
+                      mainTask: '',
+                        dateBegin: '',
+                          dateEnd: '',
+      edit: true,
+        submit:false,
       CV: [],
       
     };
-    this.onDeletingTask = this.onDeletingTask.bind(this)
-    this.onEditingTask=this.onEditingTask.bind(this)
+    this.onEditingTask = this.onEditingTask.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.onChange=this.onChange.bind(this)
   }
-handleChange = (e) => {
-  this.setState({
-    task : {
-      text: e.target.value,
-      id: this.state.task.id,
-      
-    }
-  });
-};
+  
 
-onSubmitTask = (e) => {
+handleSubmit = (e) => {
   e.preventDefault();
   this.setState({
-    tasks: this.state.tasks.concat(this.state.task),
-    task: {
-      text: '',
-      id: uniqid(),
-    },
-    number: this.state.number + 1,
-    numbers:this.state.numbers.concat(this.state.number)
-  });
+    
+      name: e.target.name.value,
+      email: e.target.email.value,
+      number: e.target.number.value,
+      scholl: e.target.scholl.value,
+      study: e.target.titleOfStudy.value,
+      dateStudy: e.target.dateOfStudy.value,
+      companyName: e.target.company.value,
+      positionTitle: e.target.position.value,
+      mainTask: e.target.task.value,
+      dateBegin: e.target.begin.value,
+      dateEnd: e.target.end.value,
+    edit: false,
+    submit: true,
+        
+  })
+  this.setState({ CV: [this.state.con] })
 };
-  onDeletingTask(e) {
-    
-    this.setState({
-       tasks: this.state.tasks.filter(task => task.id !== e.target.parentNode.id)
-    })
-  }
+  
   onEditingTask(e) {
-    
+    this.setState({
+      edit: true,
+      submit:false
+   })
+  }
+  onChange(e) {
+  console.log(e.target.value)
   }
   render() {
-    const { task, tasks,numbers } = this.state;
+     
 
     return (
       <div>
-        <form onSubmit={this.onSubmitTask}>
-          <div id="generalInformation">
-          <label htmlFor="nameInput">Enter name</label>
-          <input onChange={this.handleChange} value={task.text} type="text" id="nameInput" />
-          <label htmlFor="emailInput">Enter email</label>
-          <input onChange={this.handleChange} value={task.text} type="text" id="emailInput" />
-          <label htmlFor="numberInput">Phone number</label>
-          <input onChange={this.handleChange} value={task.text} type="text" id="numberInput" />
-          </div>
-          <div id=" educationalExperience ">
-          <label htmlFor="schoolNameInput">Enter school name</label>
-          <input onChange={this.handleChange} value={task.text} type="text" id="schoolNameInput" />
-          <label htmlFor="titleOfStudyInput">Enter title of study</label>
-          <input onChange={this.handleChange} value={task.text} type="text" id="titleOfStudyInput" />
-          <label htmlFor="dateOfStudyInput">date of study</label>
-            <input onChange={this.handleChange} value={task.text} type="text" id="dateOfStudyInput" />
-          </div>
-          <div id=" practicalExperience">
-          <label htmlFor="companyNameInput">company name,</label>
-          <input onChange={this.handleChange} value={task.text} type="text" id="companyNameInput" />
-          <label htmlFor="positionTitleInput">position title</label>
-          <input onChange={this.handleChange} value={task.text} type="text" id="positionTitleInput" />
-          <label htmlFor="mainTasksInput">main tasks of your jobs</label>
-            <input onChange={this.handleChange} value={task.text} type="text" id="dateOfStudyInput" />
-            <label htmlFor="dateFromInput"> date you worked from</label>
-            <input onChange={this.handleChange} value={task.text} type="text" id="dateFromInput" />
-            <label htmlFor="dateUntilInput">date until</label>
-            <input onChange={this.handleChange} value={task.text} type="text" id="dateUntilInput" />
-            
-            </div>
-          <button type="submit">
-            Submit
-          </button>
-        </form>
-        <Do tasks={tasks} numbers={numbers} deleting={this.onDeletingTask} editing={this.onEditingTask}/>
+        <Input handleSubmit={this.handleSubmit} state={this.state} onChange={this.onChange} />
+        <Text state={this.state} onEditingTask={this.onEditingTask}  />
       </div>
     );
   }
