@@ -1,11 +1,11 @@
 const Text = (props) => {
     const { state } = props
     const { onEditingTask } = props
-    if (state.submit) {
-        console.log(state.CV)
         return (
-        
-            <div id='text'>
+            state.CV.map(state => {
+                return (
+                    <div key={2}>
+                        <div id='text'>
                 
                
                 <div id="general-information">
@@ -29,8 +29,10 @@ const Text = (props) => {
                         <button onClick={onEditingTask}>Edit</button>
                         
             </div>
+
+                        </div>
+                    )
+                })
         )
-    }
-    return null
 }
 export default Text

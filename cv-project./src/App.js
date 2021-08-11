@@ -7,18 +7,19 @@ class App extends Component {
     super();
 
     this.state = {
-     
-      name: '',
+      con: {
+        name: '',
         email: '',
-          number: '',
-            scholl: '',
-              study: '',
-                dateStudy: '',
-                  companyName: '',
-                    positionTitle: '',
-                      mainTask: '',
-                        dateBegin: '',
-                          dateEnd: '',
+        number: '',
+        scholl: '',
+        study: '',
+        dateStudy: '',
+        companyName: '',
+        positionTitle: '',
+        mainTask: '',
+        dateBegin: '',
+        dateEnd: ''
+      },
       edit: true,
         submit:false,
       CV: [],
@@ -33,40 +34,44 @@ class App extends Component {
 handleSubmit = (e) => {
   e.preventDefault();
   this.setState({
-    
-      name: e.target.name.value,
-      email: e.target.email.value,
-      number: e.target.number.value,
-      scholl: e.target.scholl.value,
-      study: e.target.titleOfStudy.value,
-      dateStudy: e.target.dateOfStudy.value,
-      companyName: e.target.company.value,
-      positionTitle: e.target.position.value,
-      mainTask: e.target.task.value,
-      dateBegin: e.target.begin.value,
-      dateEnd: e.target.end.value,
     edit: false,
     submit: true,
+    CV:[this.state.con]
         
   })
-  this.setState({ CV: [this.state.con] })
+  console.log(this.state.CV)
 };
   
   onEditingTask(e) {
     this.setState({
       edit: true,
-      submit:false
+      submit: false,
+      CV:[]
    })
   }
   onChange(e) {
-  console.log(e.target.value)
+    this.setState({
+      con: {
+        name: this.inputName.value,
+        email: this.inputEmail.value,
+        number: this.inputPhone.value,
+        scholl: this.inputScholl.value,
+        study: this.inputStudy.value,
+        dateStudy: this.inputDate.value,
+        companyName: this.inputCompany.value,
+        positionTitle: this.inputTitle.value,
+        mainTask: this.inputTask.value,
+        dateBegin: this.inputBegin.value,
+        dateEnd: this.inputEnd.value
+      }
+    })
   }
   render() {
      
 
     return (
       <div>
-        <Input handleSubmit={this.handleSubmit} state={this.state} onChange={this.onChange} />
+        <Input thiss={this }handleSubmit={this.handleSubmit} state={this.state} onChange={this.onChange} />
         <Text state={this.state} onEditingTask={this.onEditingTask}  />
       </div>
     );
