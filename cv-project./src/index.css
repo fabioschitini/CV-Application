@@ -61,17 +61,12 @@ h1 {
   width: 1100px;
   height: 0px;
 }
-placeholder {
-  font-size: 100px;
-}
+
 #nameInput {
   margin: 0px;
   height: 45px;
   width: 1042px;
   font-size: 30px;
-}
-
-#emailInput {
 }
 
 #educationalExperience {
@@ -87,23 +82,38 @@ placeholder {
 .normal {
   margin: 0px;
   width: 370px;
+  height: 40px;
+  font-size: 20px;
+}
+
+.date {
+  width: 63px;
   height: 19px;
   font-size: 15px;
 }
-.date {
+.dateText {
   margin: 0px;
-  width: 69px;
-  height: 16px;
-  font-size: 15px;
+  width: 68px;
+  height: 27px;
+  font-size: 25px;
 }
+
 .big {
   margin: 0px;
   width: 516px;
   height: 112px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.extra {
+  margin: 0px;
+  width: 480px;
+  height: 40px;
+  font-size: 13px;
 }
 #profileInput {
   margin: 0px;
-  height: 294px;
+  height: 149px;
   width: 486px;
 }
 button {
@@ -113,13 +123,7 @@ button {
   border-radius: 15px;
   background-color: cadetblue;
 }
-#general-information {
-}
-#number {
-  position: absolute;
-  left: 50%;
-  top: 47px;
-}
+
 h2 {
   font-size: 15px;
 }
@@ -139,10 +143,20 @@ p {
 }
 #profile {
   margin: 0px;
-  height: 180px;
+  height: 149px;
   width: 486px;
 }
 
+.normal::placeholder {
+  font-size: 35px;
+  color: black;
+  font-weight: bold;
+}
+#nameInput::placeholder {
+  font-size: 35px;
+  color: black;
+  font-weight: bold;
+}
 ::placeholder {
   font-size: 15px;
   color: black;
@@ -150,13 +164,29 @@ p {
 }
 #study {
   display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 #position {
   display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 #name {
   display: flex;
 }
 .information {
-  width: 500px;
+  width: 550px;
+}
+.degree {
+  width: 350px;
+  height: 41px;
+  font-size: 15px;
+}
+h1 {
+  font-size: 25px;
+}
+.alonePading {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }

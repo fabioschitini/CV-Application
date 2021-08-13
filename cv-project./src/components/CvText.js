@@ -18,27 +18,24 @@ const Text = (props) => {
                 <div id="educationalExperience">
                     <h1>Profile</h1> 
                                 <p id='profile'>{state.profile}</p>          
-                                <p className='normal'>{state.scholl}</p>
+                                <p className='normal alonePading'>{state.scholl}</p>
                                 <div id='study'>                          
                                 <p className='normal'>{state.study}</p>
-                                    <p className='date'>{state.dateStudy}</p>
-                                    </div>
+                                    <p className='date dateText'>{state.dateStudy}-</p>
+                                    <p className='date dateText'>{state.dateStudy1}</p>
+                                </div>
+                                 <p className='extra'>{state.language}</p>
                 </div>
                     <div id="practicalExperience">
                                 <h1>Pratical Experience</h1> 
                                 <div id='position'>
                                     <p className='normal'>{state.positionTitle}</p>
-                                    <p className='date' >{state.dateBegin}</p>
-                                    <p className='date' id='untilDate'>{state.dateEnd}</p>
+                                    <p className='dateText' >{state.dateBegin}-</p>
+                                    <p className=' dateText' id='untilDate'>{state.dateEnd}</p>
                                 </div>
-                                <p className='normal'>{state.companyName}</p>
-                                                               
-                                                              
+                                <p className='normal alonePading'>{state.companyName}</p>                       
                                 <p className='big'>{state.mainTask}</p>
-                                                               
-                                
-                                                 
-                                    
+                                <p className='extra alonePading'>{state.extra}</p> 
                 </div>
                         <button onClick={onEditingTask}>Edit</button>
                         

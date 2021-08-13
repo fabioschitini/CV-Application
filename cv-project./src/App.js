@@ -19,7 +19,10 @@ class App extends Component {
         mainTask: '',
         dateBegin: '',
         dateEnd: '',
-        profile:''
+        profile: '',
+        dateStudy1: '',
+        language: '',
+        extra:''
       },
       edit: true,
         submit:false,
@@ -64,10 +67,12 @@ handleSubmit = (e) => {
         mainTask: this.inputTask.value,
         dateBegin: this.inputBegin.value,
         dateEnd: this.inputEnd.value,
-        profile:this.inputProfile.value
+        profile: this.inputProfile.value,
+        dateStudy1: this.inputDate1.value,
+        language:this.inputLanguage.value ,
+        extra:this.inputExtra.value
       }
     })
-console.log(this.inputName.value)
 
   }
   render() {
