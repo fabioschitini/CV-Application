@@ -8,23 +8,37 @@ const Text = (props) => {
                         <div id='text'>
                 
                
-                <div id="general-information">
-                    <h1>{state.name}</h1>
-                    <h2>{state.email}</h2>
-                    <h2>{state.number}</h2>
+                <div id="generalInformation">
+                                <h1>{state.name}</h1>
+                                 <div id='name'>
+                    <p className='information'>{state.email}</p>
+                                    <p className='information' id='number'>{state.number}</p> 
+                                    </div>
                 </div> 
-
-                <div id="Educational-Experience">
-                    <h1>{state.scholl}</h1>
-                    <h2>{state.study}</h2>
-                    <h2>{state.dateStudy}</h2>
+                <div id="educationalExperience">
+                    <h1>Profile</h1> 
+                                <p id='profile'>{state.profile}</p>          
+                                <p className='normal'>{state.scholl}</p>
+                                <div id='study'>                          
+                                <p className='normal'>{state.study}</p>
+                                    <p className='date'>{state.dateStudy}</p>
+                                    </div>
                 </div>
-                <div id="Profisional-Experience">
-                    <h1>{state.companyName}</h1>
-                    <h2>{state.positionTitle}</h2>
-                    <h2>{state.mainTask}</h2>
-                    <h2>{state.dateBegin}</h2>
-                    <h2>{state.dateEnd}</h2>
+                    <div id="practicalExperience">
+                                <h1>Pratical Experience</h1> 
+                                <div id='position'>
+                                    <p className='normal'>{state.positionTitle}</p>
+                                    <p className='date' >{state.dateBegin}</p>
+                                    <p className='date' id='untilDate'>{state.dateEnd}</p>
+                                </div>
+                                <p className='normal'>{state.companyName}</p>
+                                                               
+                                                              
+                                <p className='big'>{state.mainTask}</p>
+                                                               
+                                
+                                                 
+                                    
                 </div>
                         <button onClick={onEditingTask}>Edit</button>
                         

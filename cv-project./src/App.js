@@ -18,7 +18,8 @@ class App extends Component {
         positionTitle: '',
         mainTask: '',
         dateBegin: '',
-        dateEnd: ''
+        dateEnd: '',
+        profile:''
       },
       edit: true,
         submit:false,
@@ -62,15 +63,20 @@ handleSubmit = (e) => {
         positionTitle: this.inputTitle.value,
         mainTask: this.inputTask.value,
         dateBegin: this.inputBegin.value,
-        dateEnd: this.inputEnd.value
+        dateEnd: this.inputEnd.value,
+        profile:this.inputProfile.value
       }
     })
+console.log(this.inputName.value)
+
   }
   render() {
      
 
     return (
-      <div>
+      <div id='container'>
+        <div id='vertical'></div>
+          <hr id='horizontal'></hr>
         <Input thiss={this }handleSubmit={this.handleSubmit} state={this.state} onChange={this.onChange} />
         <Text state={this.state} onEditingTask={this.onEditingTask}  />
       </div>

@@ -1,13 +1,162 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+#generalInformation {
+  display: flex;
+  flex-direction: column;
+}
+#educationalExperience {
+  display: flex;
+  flex-direction: column;
+}
+#practicalExperience {
+  display: flex;
+  flex-direction: column;
+}
+textarea {
+  margin: 0px;
+  width: 500px;
+  height: 21px;
+  border: 1px solid transparent;
+  background-color: white;
+}
+
+#container {
+  width: 70%;
+  height: 660px;
+  background-color: white;
+  position: absolute;
+  left: 10%;
+  top: 10%;
+}
+
+h1 {
+  white-space: pre-wrap;
+  font-size: larger;
+}
+
+#vertical {
+  border-left: 6px solid black;
+  height: 511px;
+  position: absolute;
+  left: 45%;
+  top: 22%;
+}
+#horizontal {
+  border: 5px solid rgb(25, 27, 25);
+  border-radius: 5px;
+  position: absolute;
+  top: 19%;
+  width: 1100px;
+  height: 0px;
+}
+placeholder {
+  font-size: 100px;
+}
+#nameInput {
+  margin: 0px;
+  height: 45px;
+  width: 1042px;
+  font-size: 30px;
+}
+
+#emailInput {
+}
+
+#educationalExperience {
+  position: absolute;
+
+  top: 25%;
+}
+#practicalExperience {
+  position: absolute;
+  left: 50%;
+  top: 25%;
+}
+.normal {
+  margin: 0px;
+  width: 370px;
+  height: 19px;
+  font-size: 15px;
+}
+.date {
+  margin: 0px;
+  width: 69px;
+  height: 16px;
+  font-size: 15px;
+}
+.big {
+  margin: 0px;
+  width: 516px;
+  height: 112px;
+}
+#profileInput {
+  margin: 0px;
+  height: 294px;
+  width: 486px;
+}
+button {
+  position: absolute;
+  top: 96%;
+  left: 37%;
+  border-radius: 15px;
+  background-color: cadetblue;
+}
+#general-information {
+}
+#number {
+  position: absolute;
+  left: 50%;
+  top: 47px;
+}
+h2 {
+  font-size: 15px;
+}
+p {
+  white-space: pre-wrap;
+}
+#untilInput {
+  position: relative;
+  left: 50%;
+  top: -25px;
+}
+
+#until {
+  position: relative;
+  left: 350px;
+  top: -60px;
+}
+#profile {
+  margin: 0px;
+  height: 180px;
+  width: 486px;
+}
+
+::placeholder {
+  font-size: 15px;
+  color: black;
+  font-weight: bold;
+}
+#study {
+  display: flex;
+}
+#position {
+  display: flex;
+}
+#name {
+  display: flex;
+}
+.information {
+  width: 500px;
 }
