@@ -1,8 +1,10 @@
 const Text = (props) => {
-    const { state } = props
     const { onEditingTask } = props
+    const { CV } = props
+    
+
         return (
-            state.CV.map(state => {
+            CV.map(state => {
                 return (
                     <div key={2}>
                         <div id='text'>

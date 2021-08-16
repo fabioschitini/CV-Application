@@ -1,92 +1,70 @@
 import { Component } from 'react';
 import Text from './components/CvText'
 import Input from './components/Input'
+import React, { useState, useEffect,useRef } from "react";
 
-class App extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      con: {
+const App = () => {
+  const form = useRef(null)
+  
+const [con,setCon]=useState({
         name: '',
         email: '',
-        number: '',
+      number: '',
+        profile: '',
         scholl: '',
         study: '',
-        dateStudy: '',
-        companyName: '',
-        positionTitle: '',
-        mainTask: '',
-        dateBegin: '',
-        dateEnd: '',
-        profile: '',
-        dateStudy1: '',
+      dateStudy: '',
+      dateStudy1: '',
         language: '',
+      positionTitle: '',
+      dateBegin: '',
+        dateEnd: '',
+        companyName: '',
+        mainTask: '',
         extra:''
-      },
-      edit: true,
-        submit:false,
-      CV: [],
-      
-    };
-    this.onEditingTask = this.onEditingTask.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.onChange=this.onChange.bind(this)
-  }
-  
+})
+  const [edit, setEdit] = useState(true)
+    const [CV,setCV]=useState([])
 
-handleSubmit = (e) => {
+const handleSubmit = (e) => {
   e.preventDefault();
-  this.setState({
-    edit: false,
-    submit: true,
-    CV:[this.state.con]
-        
-  })
-  console.log(this.state.CV)
+  setEdit(false)
+  setCV([con])
 };
   
-  onEditingTask(e) {
-    this.setState({
-      edit: true,
-      submit: false,
-      CV:[]
-   })
+  const onEditingTask=(e)=> {
+    setEdit(true)
+      setCV([])
   }
-  onChange(e) {
-    this.setState({
-      con: {
-        name: this.inputName.value,
-        email: this.inputEmail.value,
-        number: this.inputPhone.value,
-        scholl: this.inputScholl.value,
-        study: this.inputStudy.value,
-        dateStudy: this.inputDate.value,
-        companyName: this.inputCompany.value,
-        positionTitle: this.inputTitle.value,
-        mainTask: this.inputTask.value,
-        dateBegin: this.inputBegin.value,
-        dateEnd: this.inputEnd.value,
-        profile: this.inputProfile.value,
-        dateStudy1: this.inputDate1.value,
-        language:this.inputLanguage.value ,
-        extra:this.inputExtra.value
-      }
+  const onChange = (e) => {
+
+    setCon({
+       name: form.current.name.value,
+        email: form.current.email.value,
+      number: form.current.number.value,
+        profile: form.current.profile.value,
+        scholl: form.current.scholl.value,
+        study: form.current.titleOfStudy.value,
+      dateStudy: form.current.dateOfStudy.value,
+      dateStudy1: form.current.dateOfStudy1.value,
+        language: form.current.language.value,
+      positionTitle: form.current.position.value,
+      dateBegin: form.current.begin.value,
+        dateEnd: form.current.end.value,
+        companyName: form.current.company.value,
+        mainTask: form.current.task.value,
+        extra:form.current.extra.value
     })
 
   }
-  render() {
-     
-
     return (
       <div id='container'>
         <div id='vertical'></div>
           <hr id='horizontal'></hr>
-        <Input thiss={this }handleSubmit={this.handleSubmit} state={this.state} onChange={this.onChange} />
-        <Text state={this.state} onEditingTask={this.onEditingTask}  />
+        <Input form={form} e edit={edit }  con={con} handleSubmit={handleSubmit}  onChange={onChange} />
+        <Text CV={CV} onEditingTask={onEditingTask}  />
       </div>
     );
-  }
 }
 
 export default App;
