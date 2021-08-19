@@ -1,4 +1,3 @@
-import { Component } from 'react';
 import Text from './components/CvText'
 import Input from './components/Input'
 import React, { useState, useEffect,useRef } from "react";

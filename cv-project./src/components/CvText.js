@@ -49,3 +49,15 @@ const Text = (props) => {
         )
 }
 export default Text
+const [a, setA] = useState(false)
+  const [b,setB]=useState(false)
+  const [c,setC]=useState(false)
+  const [d,setD]=useState(false)
+  const [e,setE]=useState(false)
+  const [f,setF]=useState(false)
+  const [g,setG]=useState(false)
+  const [h,setH]=useState(false)
+  const [i,setI]=useState(false)
+  const [j,setJ]=useState(false)
+  const [k, setK] = useState(false)
+  const [l,setL]=useState(false)
