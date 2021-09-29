@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/CV-Application/static/css/main.d2f94d32.chunk.css",
-    "main.js": "/CV-Application/static/js/main.4ddf4593.chunk.js",
-    "main.js.map": "/CV-Application/static/js/main.4ddf4593.chunk.js.map",
+    "main.js": "/CV-Application/static/js/main.5681ae9a.chunk.js",
+    "main.js.map": "/CV-Application/static/js/main.5681ae9a.chunk.js.map",
     "runtime-main.js": "/CV-Application/static/js/runtime-main.d5373e03.js",
     "runtime-main.js.map": "/CV-Application/static/js/runtime-main.d5373e03.js.map",
-    "static/js/2.cbe8cafa.chunk.js": "/CV-Application/static/js/2.cbe8cafa.chunk.js",
-    "static/js/2.cbe8cafa.chunk.js.map": "/CV-Application/static/js/2.cbe8cafa.chunk.js.map",
+    "static/js/2.37db41b0.chunk.js": "/CV-Application/static/js/2.37db41b0.chunk.js",
+    "static/js/2.37db41b0.chunk.js.map": "/CV-Application/static/js/2.37db41b0.chunk.js.map",
     "index.html": "/CV-Application/index.html",
     "static/css/main.d2f94d32.chunk.css.map": "/CV-Application/static/css/main.d2f94d32.chunk.css.map",
-    "static/js/2.cbe8cafa.chunk.js.LICENSE.txt": "/CV-Application/static/js/2.cbe8cafa.chunk.js.LICENSE.txt"
+    "static/js/2.37db41b0.chunk.js.LICENSE.txt": "/CV-Application/static/js/2.37db41b0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d5373e03.js",
-    "static/js/2.cbe8cafa.chunk.js",
+    "static/js/2.37db41b0.chunk.js",
     "static/css/main.d2f94d32.chunk.css",
-    "static/js/main.4ddf4593.chunk.js"
+    "static/js/main.5681ae9a.chunk.js"
   ]
 }
