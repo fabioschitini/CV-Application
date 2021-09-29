@@ -4,8 +4,7 @@ const Input = (props) => {
     const { onChange } = props
     const { con } = props
     const {form}=props
-    const { email }=props
-    const { test } = props
+    
 
     if (edit) {
         
@@ -28,7 +27,7 @@ const Input = (props) => {
                         <textarea  placeholder="From"  className='date' required minLength="4"  maxLength="4" onChange={onChange} value={con.dateStudy}  name="dateOfStudy"  id="dateOfStudyInput" />
                         <textarea   placeholder="Until"  className='date' required minlength="4" maxlength="4"onChange={onChange} value={con.dateStudy1}  name="dateOfStudy1"  id="dateOfStudyInput1" />
                     </div>
-                <textarea placeholder="Language "className='extra'   onChange={ onChange} onChange={ onChange}value={ con.language}  name="language" type="text" id="schoolNameInput" />
+                <textarea placeholder="Languages "className='extra'   onChange={ onChange} onChange={ onChange}value={ con.language}  name="language" type="text" id="schoolNameInput" />
 
             </div>
                 <div id="practicalExperience">

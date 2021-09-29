@@ -1,6 +1,6 @@
 import Text from './components/CvText'
 import Input from './components/Input'
-import React, { useState, useEffect,useRef } from "react";
+import React, { useState,useRef } from "react";
 
 const App = () => {
   const form = useRef(null)
